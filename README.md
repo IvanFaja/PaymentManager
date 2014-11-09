@@ -29,16 +29,15 @@ mvn package
  
 Configuration:  
 -------------- 
-Core: 
-####### 
+
+###Core: 
 *Run database creation script in /Core/config/db_creation_script in postgres terminal (this also create a default user width credentials: admin@test.com password: 1234)  
  
  
 *Set prostgres database properties in :webapp/WEB-INF/configuration.properties  
  
  
-WebVisualizer : 
-############ 
+###WebVisualizer : 
 *Set urls in resources/configuration.properties to aim to Core server 
  
 Español 
@@ -67,10 +66,8 @@ mvn package
  
 Configuración:  
 -------------- 
-Core: 
-####### 
+###Core: 
 *Correr el script de creacion de la base de datos: "/Core/config/db_creation_script" en  la consola de postgres (este script tambien crea un usuario con las credenciales: admin@test.com password: 1234)  
 *Cambiar el archivo ":webapp/WEB-INF/configuration.properties" para que contenga la informacion correcta de la base de datos  
-WebVisualizer : 
-############ 
+###WebVisualizer : 
 *Cambiar el archivo "resources/configuration.properties" para que las urls apunten a donde esta el servidor "Core"
