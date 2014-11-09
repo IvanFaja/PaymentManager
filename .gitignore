@@ -47,4 +47,8 @@ Temporary Items
 *.iml
 *.war
 */target/**
-*/VAADIN/**
+.idea/
+.settings/
+.project
+*.name
+webPortal/src/main/webapp/VAADIN/*
