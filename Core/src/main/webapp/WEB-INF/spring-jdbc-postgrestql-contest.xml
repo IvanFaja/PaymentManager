@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="connectionPooledDataSource" class="org.apache.commons.dbcp.cpdsadapter.DriverAdapterCPDS">
+        <property name="driver" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://${database.host}:${database.port}/${database.name}"/>
+        <property name="user" value="${database.user}"/>
+        <property name="password" value="${database.password}"/>
+    </bean>
+    <bean id="dataSource" class="org.apache.commons.dbcp.datasources.SharedPoolDataSource" destroy-method="close">
+        <property name="connectionPoolDataSource" ref="connectionPooledDataSource"/>
+        <property name="maxActive" value="15"/>
+        <property name="maxWait" value="3000"/>
+    </bean>
+    <bean id="jdbc" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
+
+</beans>

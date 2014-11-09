@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                      http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:component-scan base-package="test.simpleBank.core.*"/>
+
+    <bean name="/login.service"  class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter" >
+        <property name="service" ref ="loginService"></property>
+        <property name="serviceInterface" value="test.simpleBank.commons.services.LoginService"></property>
+    </bean>
+
+    <bean name="/userManagement.service"  class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter" >
+        <property name="service" ref ="userManagementService"></property>
+        <property name="serviceInterface" value="test.simpleBank.commons.services.UserCreationService"></property>
+    </bean>
+
+    <bean name="/accountManagement.service"  class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter" >
+        <property name="service" ref ="accountsManagementService"></property>
+        <property name="serviceInterface" value="test.simpleBank.commons.services.AccountCreationService"></property>
+    </bean>
+    <bean name="/accountMovementManagement.service"  class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter" >
+        <property name="service" ref ="accountMovementManagerService"></property>
+        <property name="serviceInterface" value="test.simpleBank.commons.services.AccountMovementManagerService"></property>
+    </bean>
+</beans>
