@@ -43,7 +43,8 @@ Configuration:
 Español 
 ========== 
 Una aplicación para manejar pagos entre usuarios 
-Características actuales :  
+Características actuales : 
+-----------------------
 *Manejo de sesiones por usuario 
 *Creación y eliminación de usuarios 
 *Creación de cuenta y transferencias 
