@@ -8,7 +8,7 @@ Current features:
 *Account and payment management   
  
  
-General Architecure  
+General Architecture  
 =======================  
 The project has two server applications: WebVisualizer and Core, both might be deployed in the same or different servers. The first one is the web GUI that uses "Core" server to access to the application data. Core exposes services that could be consumed for any other application (Desktop, mobile, etc. )   
   
@@ -48,7 +48,7 @@ Características actuales :
 *Manejo de sesiones por usuario 
 *Creación y eliminación de usuarios 
 *Creación de cuenta y transferencias 
-General Architecure  
+Arquitectura  
 =======================  
 El proyecto consta de dos aplicaciones: WebVisualizer y Core, las cuales pueden estar en el mismo o diferentes servidores. La primera es una interfaz gráfica web que utiliza  el servidor "Core" para acceder a los datos. Los servicios expuestos por el servidor "Core" pueden ser consumidos por otro tipo de aplicaciones (aplicaciones de escritorio, móviles, etc.) 
 Como desplegar la aplicación  
