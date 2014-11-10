@@ -12,7 +12,7 @@ import test.simpleBank.commons.services.NotFound;
 import test.simpleBank.commons.services.UserCreationService;
 
 @Component(value = "MainView")
-public class CreateUsersView extends CustomComponent implements Button.ClickListener {
+public class UsersManagmentView extends CustomComponent implements Button.ClickListener {
     private final TextField newUser;
     private final PasswordField password;
     private final Button createUser;
@@ -22,7 +22,7 @@ public class CreateUsersView extends CustomComponent implements Button.ClickList
     private UserCreationService createUserService;
 
 
-    public CreateUsersView() {
+    public UsersManagmentView() {
         createUserService = BeanFactory.getInstance().getUserManagementService();
 
         setSizeFull();
@@ -56,9 +56,11 @@ public class CreateUsersView extends CustomComponent implements Button.ClickList
                 String passwordString = password.getValue();
                 try {
                     createUserService.delete(new User(newUserString, passwordString));
-                    Notification.show("User deleted ", Notification.Type.ASSISTIVE_NOTIFICATION);
+                    Notification.show("User deleted " );
                 } catch (NotFound notFound) {
                     Notification.show("User cold no be deleted ", Notification.Type.ERROR_MESSAGE);
+                } catch (RuntimeException e){
+                    Notification.show("User already exits ", Notification.Type.ERROR_MESSAGE);
                 }
             }
         });

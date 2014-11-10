@@ -14,7 +14,7 @@ public class MainView extends VerticalLayout implements View {
 
     public MainView() {
         TabSheet tap = new TabSheet();
-        tap.addTab( new CreateUsersView(),"Manage Users");
+        tap.addTab( new UsersManagmentView(),"Manage Users");
         tap.addTab( new AccountsManangmentView(),"Manage Accounts");
         tap.addTab( new RegisterAccountMovementsView(),"Manage Movements");
         tap.addTab( new AccountMovementsReportView(),"Reports");

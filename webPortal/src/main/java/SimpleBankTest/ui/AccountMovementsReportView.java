@@ -47,6 +47,7 @@ public class AccountMovementsReportView extends VerticalLayout {
                     lazyLoader.setCriteria(reportSearchCriteria);
                     container.resetCache();
                     report.refreshRowCache();
+                    Notification.show("Fields have been updated");
                 } catch (FieldGroup.CommitException e) {
                     Notification.show("Some fields are wrong", Notification.Type.ERROR_MESSAGE);
                 }
